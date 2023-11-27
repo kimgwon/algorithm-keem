@@ -1,1 +1,1 @@
-# CodingTest_keem
+# algorithm-keem
