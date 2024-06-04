@@ -1,14 +1,13 @@
-from collections import deque
-
 def solution(s):
-    q = deque()
+    s_stack = []
     for i in s:
-        if i=='(':
-            q.append(i)
-        else:
-            if q:
-                q.popleft()
-            else:
+        if i == ')':
+            if not s_stack:
                 return False
-            
-    return True if not q else False
+            s_stack.pop()
+        else:
+            s_stack.append(i)
+    else:
+        if s_stack:
+            return False
+    return True
